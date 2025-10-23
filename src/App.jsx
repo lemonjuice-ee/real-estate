@@ -22,13 +22,23 @@ function App() {
 <nav className="fixed top-[40px] md:top-[48px] left-0 right-0 z-50 bg-white shadow-md w-full">
   <div className="flex justify-between h-24 items-center mx-auto px-6 sm:px-8 lg:px-10 ml-10 mr-10">
     {/* Logo */}
-    <div className="flex items-center space-x-2">
-      <img
-        src="/logo.webp"
-        alt="Logo"
-        className="h-20 w-auto object-contain"
-      />
-    </div>
+<div
+  className="flex items-center space-x-2 cursor-pointer"
+  onClick={(e) => {
+    e.preventDefault();
+    const top = document.getElementById("home");
+    if (top) {
+      top.scrollIntoView({ behavior: "smooth" });
+    }
+  }}
+>
+  <img
+    src="/logo.webp"
+    alt="Logo"
+    className="h-20 w-auto object-contain"
+  />
+</div>
+
 
 {/* Nav Links */}
 <div className="hidden md:flex space-x-8">
@@ -248,7 +258,7 @@ function App() {
       <section className="relative bg-gradient-to-b from-white to-gray-100 py-12 px-6 md:px-12 lg:px-24">
   {/* Section Title */}
   <div className="text-center mb-12">
-    <h2 className="text-4xl font-serif text-gray-900 mb-3 font-bold">The Metzger Way</h2>
+    <h2 className="text-4xl font-serif text-gray-900 mb-3 font-bold mt-5">The Metzger Way</h2>
     <p className="text-gray-600 max-w-2xl mx-auto">
       Strategic marketing, local expertise, and dedicated service that
       turn listings into sold signs.
@@ -733,7 +743,7 @@ function App() {
       </div>
 
       {/* Copyright */}
-      <p className="text-gray-500 text-sm text-center mt-8">
+      <p className="text-gray-500 text-sm text-center mt-12">
         &copy; {new Date().getFullYear()} MARCI METZGER HOMES. All rights reserved.
       </p>
     </footer>
